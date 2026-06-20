@@ -6,7 +6,7 @@
 ============================================================ */
 window.CONFIG = {
   // 1) Paste your Paystack PUBLIC key here (starts with pk_live_ or pk_test_)
-  PAYSTACK_PUBLIC_KEY: "sk_live_73501c2cdb7006a7e114f6f8fa3043132b31c01c",
+  PAYSTACK_PUBLIC_KEY: "pk_live_84864b7a3c351a69dce1f1c22a1a726b393aa222",
 
   // 2) Where the Netlify Functions live. Leave as-is for Netlify.
   //    (On Netlify, functions are served from /.netlify/functions)
