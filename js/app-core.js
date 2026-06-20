@@ -38,7 +38,41 @@ const FOODS = [
   {n:"Kunu",e:"🥛",gi:60,carbs:22,serve:"1 glass",cat:"drink",speed:"fast",pair:"Watch portion; can spike quickly.",portion:"Small glass; avoid extra sugar.",time:"Daytime."},
   {n:"Malt drink",e:"🍺",gi:72,carbs:43,serve:"1 bottle",cat:"drink",speed:"fast",pair:"High sugar — treat as an occasional indulgence.",portion:"Half a bottle, or choose a low-sugar option.",time:"Rarely; with activity."},
   {n:"Soft drink (cola)",e:"🥤",gi:63,carbs:39,serve:"1 can",cat:"drink",speed:"fast",pair:"Swap for water, zobo or sparkling water.",portion:"Best avoided; choose sugar-free if needed.",time:"Avoid on an empty stomach."},
-  {n:"Garden egg",e:"🍆",gi:15,carbs:5,serve:"3 pieces",cat:"veg",speed:"slow",pair:"Perfect low-GL snack with groundnut.",portion:"Enjoy freely.",time:"Any time."}
+  {n:"Garden egg",e:"🍆",gi:15,carbs:5,serve:"3 pieces",cat:"veg",speed:"slow",pair:"Perfect low-GL snack with groundnut.",portion:"Enjoy freely.",time:"Any time."},
+  {n:"Salad (vegetable)",e:"🥗",gi:15,carbs:8,serve:"1 bowl",cat:"veg",speed:"slow",pair:"Add boiled egg, chicken or fish to make it a full low-sugar meal.",portion:"Enjoy a generous bowl — very gentle on sugar.",time:"Any meal — an excellent choice."},
+  {n:"Coleslaw",e:"🥬",gi:25,carbs:10,serve:"1 small bowl",cat:"veg",speed:"slow",pair:"Lovely beside grilled protein; go easy on heavy salad cream.",portion:"A small bowl; lighter dressing keeps it low.",time:"Any meal."},
+  {n:"Avocado (pear)",e:"🥑",gi:15,carbs:9,serve:"half fruit",cat:"veg",speed:"slow",pair:"Great with eggs or on wholemeal bread.",portion:"Half to one — healthy fats, very low sugar impact.",time:"Any time."},
+  {n:"Boiled egg",e:"🥚",gi:0,carbs:1,serve:"2 eggs",cat:"protein",speed:"slow",pair:"Pairs well with salad, bread or yam in moderation.",portion:"1–2 eggs — protein with almost no sugar impact.",time:"Any meal."},
+  {n:"Grilled chicken",e:"🍗",gi:0,carbs:0,serve:"1 piece",cat:"protein",speed:"slow",pair:"Add to rice or salad to slow the overall sugar spike.",portion:"A palm-size piece is a great protein choice.",time:"Any meal."},
+  {n:"Grilled fish",e:"🐟",gi:0,carbs:0,serve:"1 piece",cat:"protein",speed:"slow",pair:"Excellent with vegetables or a small portion of swallow.",portion:"A palm-size piece — no sugar impact.",time:"Any meal."},
+  {n:"Sweet potato (boiled)",e:"🍠",gi:54,carbs:38,serve:"1 medium",cat:"starchy",speed:"moderate",pair:"Pair with eggs, fish or vegetables.",portion:"One medium; gentler than white potato.",time:"Breakfast or lunch."},
+  {n:"Irish potato (boiled)",e:"🥔",gi:78,carbs:36,serve:"2 medium",cat:"starchy",speed:"moderate",pair:"Add protein and vegetables to balance.",portion:"2 medium; boiled is better than fried.",time:"Daytime."},
+  {n:"Spaghetti",e:"🍝",gi:49,carbs:43,serve:"1 plate",cat:"starchy",speed:"moderate",pair:"Add vegetables and protein; avoid heavy sugary sauces.",portion:"One cupped-hand of pasta with plenty of veg.",time:"Lunch."},
+  {n:"Watermelon",e:"🍉",gi:72,carbs:11,serve:"1 cup",cat:"fruit",speed:"fast",pair:"Refreshing, but eat in moderation as a snack.",portion:"A cup; pairs well after a light meal.",time:"Daytime snack."},
+  {n:"Banana",e:"🍌",gi:51,carbs:27,serve:"1 medium",cat:"fruit",speed:"moderate",pair:"Have with nuts or yoghurt to slow the rise.",portion:"One medium; riper bananas are higher.",time:"Before activity."},
+  {n:"Apple",e:"🍎",gi:36,carbs:21,serve:"1 medium",cat:"fruit",speed:"slow",pair:"A great low-GL fruit snack on its own.",portion:"One medium — a smart everyday choice.",time:"Any time."},
+  {n:"Orange",e:"🍊",gi:43,carbs:15,serve:"1 medium",cat:"fruit",speed:"slow",pair:"Whole fruit is better than juice.",portion:"One whole orange; skip the juice.",time:"Any time."},
+  {n:"Pawpaw (papaya)",e:"🧡",gi:59,carbs:14,serve:"1 cup",cat:"fruit",speed:"moderate",pair:"Lovely light snack; keep the portion to a cup.",portion:"One cup of cubes.",time:"Daytime."},
+  {n:"Groundnut (peanuts)",e:"🥜",gi:14,carbs:6,serve:"1 handful",cat:"protein",speed:"slow",pair:"A filling low-GL snack; watch the quantity for calories.",portion:"A small handful.",time:"Any time."},
+  {n:"Yoghurt (plain)",e:"🥛",gi:35,carbs:12,serve:"1 cup",cat:"drink",speed:"slow",pair:"Choose unsweetened; add fruit instead of sugar.",portion:"One cup of plain/unsweetened.",time:"Breakfast or snack."},
+  {n:"Tea (unsweetened)",e:"🍵",gi:0,carbs:0,serve:"1 cup",cat:"drink",speed:"slow",pair:"Skip sugar; a little milk is fine.",portion:"Enjoy freely without added sugar.",time:"Any time."},
+  {n:"Masa (rice cake)",e:"🍘",gi:70,carbs:34,serve:"3 pieces",cat:"starchy",speed:"fast",pair:"Eat with pepper sauce or yaji; pair with protein.",portion:"2–3 pieces; not many at once.",time:"Breakfast."},
+  {n:"Tigernut milk (Kunu aya)",e:"🥛",gi:35,carbs:18,serve:"1 glass",cat:"drink",speed:"moderate",pair:"Lower sugar than many local drinks if unsweetened.",portion:"One glass; avoid adding extra sugar.",time:"Daytime."},
+  {n:"Millet drink (Kunun gyada/maiwa)",e:"🥛",gi:62,carbs:24,serve:"1 glass",cat:"drink",speed:"fast",pair:"Watch portion; can raise sugar quickly.",portion:"Small glass; unsweetened is better.",time:"Daytime."},
+  {n:"Fura da nono",e:"🥛",gi:55,carbs:26,serve:"1 bowl",cat:"drink",speed:"moderate",pair:"The nono (milk) helps slow it; mind added sugar.",portion:"One small bowl.",time:"Daytime."},
+  {n:"Tuwo shinkafa",e:"🍚",gi:80,carbs:48,serve:"2 fist-size",cat:"swallow/rice",speed:"heavy",pair:"Eat with miyan kuka or taushe rich in protein and veg.",portion:"One wrap; generous soup.",time:"Lunch."},
+  {n:"Tuwo masara (corn)",e:"🌽",gi:78,carbs:46,serve:"2 fist-size",cat:"swallow/rice",speed:"heavy",pair:"Pair with vegetable-rich, protein soup.",portion:"One wrap; load up on soup.",time:"Lunch."},
+  {n:"Starch (Ofe nmmanu)",e:"🟡",gi:85,carbs:50,serve:"2 fist-size",cat:"swallow/rice",speed:"heavy",pair:"Eat with banga/oha soup; keep swallow small.",portion:"One small wrap.",time:"Midday."},
+  {n:"Wheat swallow",e:"🟤",gi:67,carbs:44,serve:"2 fist-size",cat:"swallow/rice",speed:"heavy",pair:"A gentler swallow; still keep portion modest.",portion:"One wrap with vegetable soup.",time:"Lunch."},
+  {n:"Oatmeal",e:"🥣",gi:55,carbs:27,serve:"1 bowl",cat:"starchy",speed:"moderate",pair:"Add nuts; avoid sugar, use fruit to sweeten.",portion:"One bowl unsweetened.",time:"Breakfast."},
+  {n:"Roasted plantain (boli)",e:"🍌",gi:55,carbs:38,serve:"1 medium",cat:"starchy",speed:"moderate",pair:"Pair with groundnut or fish.",portion:"One medium; roasted beats fried.",time:"Daytime."},
+  {n:"Roasted/boiled corn",e:"🌽",gi:52,carbs:30,serve:"1 cob",cat:"starchy",speed:"moderate",pair:"Have with coconut or pear (avocado).",portion:"One cob.",time:"Daytime snack."},
+  {n:"Coconut",e:"🥥",gi:45,carbs:6,serve:"1 slice",cat:"veg",speed:"slow",pair:"Pairs nicely with corn; low sugar impact.",portion:"A few pieces.",time:"Any time."},
+  {n:"Ofada rice",e:"🍚",gi:65,carbs:44,serve:"1 plate",cat:"swallow/rice",speed:"heavy",pair:"With ayamase sauce and protein; keep rice modest.",portion:"One cupped-hand of rice.",time:"Lunch."},
+  {n:"Vegetable (efo riro)",e:"🥬",gi:18,carbs:6,serve:"1 bowl",cat:"soup",speed:"slow",pair:"Excellent low-GL; great with small swallow.",portion:"Generous; mostly veg and protein.",time:"Any meal."},
+  {n:"Nono (fermented milk)",e:"🥛",gi:32,carbs:8,serve:"1 cup",cat:"drink",speed:"slow",pair:"Low sugar if unsweetened.",portion:"One cup unsweetened.",time:"Any time."},
+  {n:"Soya milk",e:"🥛",gi:34,carbs:9,serve:"1 glass",cat:"drink",speed:"slow",pair:"Good lower-sugar drink; choose unsweetened.",portion:"One glass.",time:"Any time."},
+  {n:"Garri (soaked, drink)",e:"🥣",gi:75,carbs:40,serve:"1 bowl",cat:"starchy",speed:"fast",pair:"Add groundnut and avoid sugar to soften the spike.",portion:"Small bowl; skip the sugar.",time:"Daytime."}
 ];
 
 const speedAlert = {
@@ -355,16 +389,19 @@ function renderHome(){
       <div class="ringwrap">
         <div class="ring">
           ${ring(Math.min(gl,30),30,128,13,band.color,'var(--mint)')}
-          <div class="mid"><div class="v" style="color:${band.color}">${gl}</div><div class="l">Daily GL</div></div>
+          <div class="mid"><div class="v" style="color:${band.color}">${gl}</div><div class="l">Today total</div></div>
         </div>
         <div style="flex:1">
-          <div class="eyebrow">Estimated glycemic load</div>
-          <div style="font-size:17px;font-weight:700;margin:4px 0 8px">Today's sugar impact</div>
+          <div class="eyebrow">Estimated daily total</div>
+          <div style="font-size:17px;font-weight:700;margin:4px 0 8px">Today's total sugar impact</div>
           <span class="statuspill" style="background:${band.bg};color:${band.color}">${band.emoji} ${band.label}</span>
-          <div style="font-size:12.5px;color:var(--muted);margin-top:10px">${S.meals.length} meal${S.meals.length!==1?'s':''} logged today</div>
+          <div style="font-size:12.5px;color:var(--muted);margin-top:10px">Adds up all ${S.meals.length} meal${S.meals.length!==1?'s':''} you logged today</div>
         </div>
       </div>
-      <div style="display:flex;gap:8px;margin-top:16px">
+      <button onclick="showGLInfo()" style="width:100%;margin-top:12px;background:#ffffffcc;border:1px solid var(--line);border-radius:12px;padding:10px;font-size:12.5px;color:var(--muted);text-align:left;display:flex;gap:8px;align-items:center">
+        <span>ℹ️</span><span style="flex:1">This is your <b style="color:var(--ink)">whole day added up</b> — not one food. Tap to see how it's counted.</span><span style="color:var(--teal)">›</span>
+      </button>
+      <div style="display:flex;gap:8px;margin-top:12px">
         <button class="btn btn-primary btn-sm" style="flex:1" onclick="go('meal')">＋ Log Meal</button>
         <button class="btn btn-teal btn-sm" style="flex:1" onclick="go('scan')">📷 Scan Food</button>
         <button class="btn btn-ghost btn-sm" style="flex:1;color:var(--teal)" onclick="quickWater()">💧 Water</button>
@@ -1111,6 +1148,29 @@ function restart(){
 function openSheet(html){$('#sheetPanel').innerHTML='<div class="grab"></div>'+html;$('#sheet').classList.add('show');}
 function closeSheet(){$('#sheet').classList.remove('show');}
 
+/* explainer: how the score is calculated (addresses tester confusion) */
+function showGLInfo(){
+  openSheet(`
+    <h2 style="font-size:21px;margin-bottom:6px">How your score works</h2>
+    <div style="font-size:13.5px;color:var(--muted);line-height:1.6;margin-bottom:14px">SugarGuard does <b>not</b> measure your blood sugar or calories. It <b>estimates</b> the impact of food using its <b>Glycemic Load (GL)</b> — a standard nutrition number based on each food's glycemic index and typical portion.</div>
+    <div class="card flat" style="margin-bottom:12px">
+      <div style="font-weight:700;margin-bottom:8px">The big number = your whole day</div>
+      <div style="font-size:13px;color:var(--muted);line-height:1.55">The score on your home screen <b>adds up every meal</b> you log today. So if you ate rice earlier and then add a salad, the salad is low — but your <b>day's total</b> can still be high from the rice. The salad didn't raise it; the earlier food did.</div>
+    </div>
+    <div class="card flat" style="margin-bottom:12px">
+      <div style="font-weight:700;margin-bottom:8px">To see ONE food's impact</div>
+      <div style="font-size:13px;color:var(--muted);line-height:1.55">Open the <b>Meal Calculator</b> or <b>Nigerian Food Database</b> and tap any food. You'll see that food's own GL on its own — salad and vegetables show <b>low</b> 🟢.</div>
+    </div>
+    <div style="display:flex;gap:12px;justify-content:space-around;margin:14px 0;text-align:center">
+      <div><div style="font-weight:800;font-family:Sora;color:var(--green);font-size:20px">≤10</div><div style="font-size:11px;color:var(--muted)">🟢 Low</div></div>
+      <div><div style="font-weight:800;font-family:Sora;color:var(--orange);font-size:20px">11–19</div><div style="font-size:11px;color:var(--muted)">🟠 Moderate</div></div>
+      <div><div style="font-weight:800;font-family:Sora;color:var(--red);font-size:20px">≥20</div><div style="font-size:11px;color:var(--muted)">🔴 High</div></div>
+    </div>
+    <div class="disc"><span>⚠️</span><span>These are estimates from food data — not a blood-glucose reading. Follow your doctor's advice.</span></div>
+    <button class="btn btn-primary" style="margin-top:14px" onclick="closeSheet()">Got it</button>
+  `);
+}
+
 // register a tiny service worker for installable PWA (inline)
 if('serviceWorker'in navigator){
   const sw=`self.addEventListener('install',e=>self.skipWaiting());self.addEventListener('fetch',()=>{});`;
@@ -1122,7 +1182,7 @@ if('serviceWorker'in navigator){
 Object.assign(window,{onbNext,loadDemo,finishOnb,go,quickWater,pickMealType,filterFoods,toggleFood,
   confirmLogMeal,openMealDetail,deleteMeal,filterDB,openFoodDetail,quickAdd,addWater,quickWater,
   resetWater,testBeep,handleScan,setSleep,addEx,rmEx,sendChat,askSuggest,exportData,selPlan,payNow,
-  startPaystack,verifyPayment,toggleReminders,saveProfile,restart,closeSheet});
+  startPaystack,verifyPayment,toggleReminders,saveProfile,restart,closeSheet,showGLInfo});
 
 // boot on load
 if(document.readyState!=='loading')boot();else document.addEventListener('DOMContentLoaded',boot);
