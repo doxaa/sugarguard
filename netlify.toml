@@ -1,0 +1,18 @@
+# Netlify configuration for SugarGuard
+[build]
+  publish = "."
+  functions = "netlify/functions"
+
+# SPA-style: serve index.html, functions handled separately
+[[redirects]]
+  from = "/.netlify/functions/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
+
+# Security headers
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "SAMEORIGIN"
+    Referrer-Policy = "strict-origin-when-cross-origin"

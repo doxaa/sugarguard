@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<meta name="theme-color" content="#0F5132">
+<title>SugarGuard — Understand your food's sugar impact</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+
+</head>
+<body>
+<div id="app">
+
+  <!-- ============ ONBOARDING ============ -->
+  <section class="screen active" id="onb">
+    <div class="onb-wrap">
+      <!-- intro -->
+      <div class="onb-step show" data-step="0">
+        <div class="onb-hero">
+          <div class="shield">
+            <svg viewBox="0 0 100 100" width="96" height="96"><path d="M50 8 L84 20 V46 C84 70 68 86 50 92 C32 86 16 70 16 46 V20 Z" fill="#ffffff1a" stroke="#2DD4BF" stroke-width="2"/><path d="M50 30c-9 9-15 16-15 25a15 15 0 0 0 30 0c0-9-6-16-15-25z" fill="#2DD4BF"/></svg>
+          </div>
+          <h1>SugarGuard</h1>
+          <p>Understand your food's sugar impact, stay hydrated, sleep well, and build healthier habits — all in one app.</p>
+          <div style="display:flex;gap:9px;justify-content:center;flex-wrap:wrap">
+            <span style="display:inline-flex;align-items:center;gap:6px;padding:8px 14px;border-radius:20px;background:#ffffff16;border:1px solid #ffffff2e;color:#eafff5;font-size:13px;font-weight:600">🍽️ Food</span>
+            <span style="display:inline-flex;align-items:center;gap:6px;padding:8px 14px;border-radius:20px;background:#ffffff16;border:1px solid #ffffff2e;color:#eafff5;font-size:13px;font-weight:600">💧 Water</span>
+            <span style="display:inline-flex;align-items:center;gap:6px;padding:8px 14px;border-radius:20px;background:#ffffff16;border:1px solid #ffffff2e;color:#eafff5;font-size:13px;font-weight:600">🌙 Sleep</span>
+            <span style="display:inline-flex;align-items:center;gap:6px;padding:8px 14px;border-radius:20px;background:#ffffff16;border:1px solid #ffffff2e;color:#eafff5;font-size:13px;font-weight:600">❤️ Health</span>
+          </div>
+          <div style="height:8px"></div>
+          <button class="btn btn-teal" style="max-width:280px" onclick="onbNext()">Get Started</button>
+          <button class="btn" style="color:#bfe9d6;font-size:13px;max-width:280px" onclick="loadDemo()">Skip — explore a demo</button>
+        </div>
+      </div>
+
+      <!-- step 1: identity -->
+      <div class="onb-step" data-step="1">
+        <div style="height:env(safe-area-inset-top)"></div>
+        <div class="dots" style="margin-top:24px"><span class="dot on"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+        <h2>Hello there 👋</h2>
+        <p class="hint">First, a little about you. This stays on your device.</p>
+        <div class="field"><label>Your name</label><input id="i_name" placeholder="e.g. Glory" autocomplete="off"></div>
+        <div class="field"><label>Email <span style="opacity:.7;font-weight:400">(for your subscription & receipts)</span></label><input id="i_email" type="email" placeholder="you@email.com" autocomplete="email"></div>
+        <div class="row2">
+          <div class="field"><label>Age</label><input id="i_age" type="number" inputmode="numeric" placeholder="32"></div>
+          <div class="field"><label>Gender</label><select id="i_gender"><option value="">Select</option><option>Female</option><option>Male</option><option>Prefer not to say</option></select></div>
+        </div>
+        <div class="row2">
+          <div class="field"><label>Weight (kg)</label><input id="i_weight" type="number" inputmode="decimal" placeholder="70"></div>
+          <div class="field"><label>Height (cm)</label><input id="i_height" type="number" inputmode="numeric" placeholder="168"></div>
+        </div>
+        <div class="field"><label>Country</label><select id="i_country"><option>Nigeria</option><option>Ghana</option><option>Kenya</option><option>South Africa</option><option>United Kingdom</option><option>United States</option><option>Other</option></select></div>
+        <button class="btn btn-teal" onclick="onbNext()" style="margin-top:8px">Continue</button>
+      </div>
+
+      <!-- step 2: goal + health -->
+      <div class="onb-step" data-step="2">
+        <div style="height:env(safe-area-inset-top)"></div>
+        <div class="dots" style="margin-top:24px"><span class="dot"></span><span class="dot on"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+        <h2>What's your main goal?</h2>
+        <p class="hint">We'll tailor your dashboard and coaching to this.</p>
+        <div class="chips" id="goalChips">
+          <button class="chip" data-v="Diabetes awareness">🩺 Diabetes awareness</button>
+          <button class="chip" data-v="Glucose awareness">📊 Glucose awareness</button>
+          <button class="chip" data-v="Weight loss">⚖️ Weight loss</button>
+          <button class="chip" data-v="Hydration">💧 Hydration</button>
+          <button class="chip" data-v="Healthy eating">🥗 Healthy eating</button>
+          <button class="chip" data-v="Fitness">🏃 Fitness</button>
+          <button class="chip" data-v="Pregnancy wellness">🤰 Pregnancy wellness</button>
+          <button class="chip" data-v="Family nutrition">👨‍👩‍👧 Family nutrition</button>
+        </div>
+        <h2 style="font-size:18px;margin-top:24px">Your health status</h2>
+        <p class="hint">Helps us set safer estimate ranges. Not a diagnosis.</p>
+        <div class="chips" id="healthChips">
+          <button class="chip" data-v="Diabetic">Diabetic</button>
+          <button class="chip" data-v="Pre-diabetic">Pre-diabetic</button>
+          <button class="chip" data-v="Not diabetic">Not diabetic</button>
+          <button class="chip" data-v="Unsure">Unsure</button>
+        </div>
+        <button class="btn btn-teal" onclick="onbNext()" style="margin-top:22px">Continue</button>
+      </div>
+
+      <!-- step 3: lifestyle -->
+      <div class="onb-step" data-step="3">
+        <div style="height:env(safe-area-inset-top)"></div>
+        <div class="dots" style="margin-top:24px"><span class="dot"></span><span class="dot"></span><span class="dot on"></span><span class="dot"></span><span class="dot"></span></div>
+        <h2>Your daily rhythm</h2>
+        <p class="hint">Used for water goals, sleep and reminder timing.</p>
+        <div class="field"><label>Activity level</label><select id="i_activity"><option value="1.2">Mostly sitting</option><option value="1.4" selected>Lightly active</option><option value="1.6">Active</option><option value="1.8">Very active</option></select></div>
+        <div class="row2">
+          <div class="field"><label>Wake time</label><input id="i_wake" type="time" value="06:30"></div>
+          <div class="field"><label>Sleep time</label><input id="i_sleep" type="time" value="22:30"></div>
+        </div>
+        <div class="field"><label>Nigerian food preference</label><select id="i_naija"><option>Yes — show Nigerian foods first</option><option>Sometimes</option><option>No preference</option></select></div>
+        <div class="field"><label>Favourite foods (optional)</label><input id="i_fav" placeholder="e.g. jollof rice, beans, plantain"></div>
+        <button class="btn btn-teal" onclick="onbNext()" style="margin-top:8px">Continue</button>
+      </div>
+
+      <!-- step 4: water + reminders -->
+      <div class="onb-step" data-step="4">
+        <div style="height:env(safe-area-inset-top)"></div>
+        <div class="dots" style="margin-top:24px"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot on"></span><span class="dot"></span></div>
+        <h2>Water & reminders</h2>
+        <p class="hint">We'll calculate a goal for you — you can change it anytime.</p>
+        <div class="field"><label>Water goal preference</label><select id="i_waterpref"><option value="auto">Calculate for me (recommended)</option><option value="2000">2.0 L / day</option><option value="2500">2.5 L / day</option><option value="3000">3.0 L / day</option></select></div>
+        <div class="field"><label>Remind me to drink water every</label><select id="i_waterint"><option value="60">1 hour</option><option value="90" selected>1.5 hours</option><option value="120">2 hours</option><option value="0">Don't remind me</option></select></div>
+        <div class="field"><label>Reminder sound</label><select id="i_sound"><option value="beep">Soft beep 🔔</option><option value="chime">Chime ✨</option><option value="silent">Vibrate / silent</option></select></div>
+        <div class="card flat" style="background:#ffffff10;border-color:#ffffff26;color:#dff5ea;font-size:13px;line-height:1.5;display:flex;gap:10px">
+          <span>🔔</span><span>SugarGuard can beep or chime when it's time to drink water or when a meal may be reaching its estimated sugar peak. Enable notifications when asked.</span>
+        </div>
+        <button class="btn btn-teal" onclick="onbNext()" style="margin-top:18px">Continue</button>
+      </div>
+
+      <!-- step 5: disclaimer + finish -->
+      <div class="onb-step" data-step="5">
+        <div style="height:env(safe-area-inset-top)"></div>
+        <div class="dots" style="margin-top:24px"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot on"></span></div>
+        <h2>One important note</h2>
+        <p class="hint">Please read before you start.</p>
+        <div class="card" style="color:var(--ink);line-height:1.55;font-size:14px">
+          <div style="font-weight:700;color:var(--green);margin-bottom:8px;display:flex;gap:8px;align-items:center"><span>🛡️</span> SugarGuard is a wellness & awareness tool</div>
+          <p style="color:var(--muted)">It is <b>not a medical device</b> and does <b>not</b> diagnose diabetes. Your phone <b>cannot</b> measure real blood glucose by touching your skin.</p>
+          <p style="color:var(--muted);margin-top:10px">All sugar figures are <b>estimates</b> based on each food's glycemic index, your portion, timing and the details you enter — not a blood reading.</p>
+          <p style="color:var(--muted);margin-top:10px">If you connect a certified CGM or wearable later, real sensor readings are shown separately and clearly labelled.</p>
+          <p style="color:var(--muted);margin-top:10px">Always follow your doctor's guidance for any medical decision.</p>
+        </div>
+        <label style="display:flex;gap:11px;align-items:center;margin:18px 2px;font-size:14px;color:#eafff5">
+          <span class="toggle" id="agreeTog" onclick="this.classList.toggle('on')"></span>
+          I understand these are estimates, not blood readings.
+        </label>
+        <button class="btn btn-teal" onclick="finishOnb()">Enter SugarGuard</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- screens injected below by JS-rendered markup -->
+  <!-- HOME -->
+  <section class="screen" id="home">
+    <div class="scroll" id="homeScroll"></div>
+  </section>
+
+  <!-- MEAL CALC -->
+  <section class="screen" id="meal">
+    <div class="topbar"><div class="back" onclick="go('home')">‹</div><div><h2>Meal Calculator</h2><div class="sub">Estimate sugar impact before you eat</div></div></div>
+    <div class="scroll" id="mealScroll"></div>
+  </section>
+
+  <!-- SCAN -->
+  <section class="screen" id="scan">
+    <div class="topbar"><div class="back" onclick="go('home')">‹</div><div><h2>Scan Food</h2><div class="sub">AI food recognition estimate</div></div></div>
+    <div class="scroll" id="scanScroll"></div>
+  </section>
+
+  <!-- WATER -->
+  <section class="screen" id="water">
+    <div class="topbar"><div class="back" onclick="go('home')">‹</div><div><h2>Water Tracker</h2><div class="sub" id="waterSub">Stay hydrated for your goal</div></div></div>
+    <div class="scroll" id="waterScroll"></div>
+  </section>
+
+  <!-- SLEEP -->
+  <section class="screen" id="sleep">
+    <div class="topbar"><div class="back" onclick="go('home')">‹</div><div><h2>Sleep Tracker</h2><div class="sub">Rest supports healthy glucose</div></div></div>
+    <div class="scroll" id="sleepScroll"></div>
+  </section>
+
+  <!-- EXERCISE -->
+  <section class="screen" id="exercise">
+    <div class="topbar"><div class="back" onclick="go('home')">‹</div><div><h2>Exercise</h2><div class="sub">Movement lowers sugar spikes</div></div></div>
+    <div class="scroll" id="exScroll"></div>
+  </section>
+
+  <!-- COACHING -->
+  <section class="screen" id="coaching">
+    <div class="topbar"><div class="back" onclick="go('home')">‹</div><div><h2>AI Coaching</h2><div class="sub">Personal, food-smart guidance</div></div></div>
+    <div class="scroll" id="chatScroll" style="padding-bottom:96px"></div>
+    <div class="chatbar"><input id="chatInput" placeholder="Ask about a food, portion, or goal…" onkeydown="if(event.key==='Enter')sendChat()"><button class="btn btn-primary" style="width:auto;padding:0 18px" onclick="sendChat()">➤</button></div>
+  </section>
+
+  <!-- REPORTS -->
+  <section class="screen" id="reports">
+    <div class="topbar"><div class="back" onclick="go('more')">‹</div><div><h2>Reports</h2><div class="sub">Your weekly summary</div></div></div>
+    <div class="scroll" id="reportsScroll"></div>
+  </section>
+
+  <!-- PREMIUM -->
+  <section class="screen" id="premium">
+    <div class="topbar"><div class="back" onclick="go('home')">‹</div><div><h2>SugarGuard Premium</h2><div class="sub">Unlock your full health picture</div></div></div>
+    <div class="scroll" id="premiumScroll"></div>
+  </section>
+
+  <!-- MORE -->
+  <section class="screen" id="more">
+    <div class="topbar"><div class="back" onclick="go('home')">‹</div><div><h2>More</h2><div class="sub">Profile, goals & settings</div></div></div>
+    <div class="scroll" id="moreScroll"></div>
+  </section>
+
+  <!-- PROFILE -->
+  <section class="screen" id="profile">
+    <div class="topbar"><div class="back" onclick="go('more')">‹</div><div><h2>Profile & Goals</h2><div class="sub">Edit your details</div></div></div>
+    <div class="scroll" id="profileScroll"></div>
+  </section>
+
+  <!-- DISCLAIMER -->
+  <section class="screen" id="disclaimer">
+    <div class="topbar"><div class="back" onclick="go('more')">‹</div><div><h2>Medical Disclaimer</h2><div class="sub">Please read carefully</div></div></div>
+    <div class="scroll" id="discScroll"></div>
+  </section>
+
+  <!-- FOOD DB -->
+  <section class="screen" id="fooddb">
+    <div class="topbar"><div class="back" onclick="go('meal')">‹</div><div><h2>Nigerian Food Database</h2><div class="sub">Tap any food for full estimate</div></div></div>
+    <div class="scroll" id="dbScroll"></div>
+  </section>
+
+  <!-- bottom nav -->
+  <nav class="nav" id="bottomNav" style="display:none">
+    <button data-tab="home" class="on" onclick="go('home')"><span class="navdot"></span><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11l9-8 9 8M5 10v10h5v-6h4v6h5V10"/></svg>Home</button>
+    <button data-tab="meal" onclick="go('meal')"><span class="navdot"></span><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 3v7a3 3 0 003 3v8M7 3v6M10 3v6M18 3c-2 0-3 3-3 7h3v11"/></svg>Meal Calc</button>
+    <div class="scanfab"><button class="fab" onclick="go('scan')"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 9V7a2 2 0 012-2h2M17 5h2a2 2 0 012 2v2M21 15v2a2 2 0 01-2 2h-2M7 19H5a2 2 0 01-2-2v-2"/><circle cx="12" cy="12" r="3"/></svg></button></div>
+    <button data-tab="water" onclick="go('water')"><span class="navdot"></span><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3c4 4 7 7.5 7 11a7 7 0 01-14 0c0-3.5 3-7 7-11z"/></svg>Water</button>
+    <button data-tab="coaching" onclick="go('coaching')"><span class="navdot"></span><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 01-9 8.5 8.5 8.5 0 01-3.8-.9L3 21l1.9-5.2A8.38 8.38 0 0112 3a8.5 8.5 0 019 8.5z"/></svg>Coaching</button>
+    <button data-tab="more" onclick="go('more')"><span class="navdot"></span><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="5" cy="12" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="19" cy="12" r="1.6"/></svg>More</button>
+  </nav>
+
+  <!-- sheet + toast -->
+  <div class="sheet" id="sheet"><div class="bg" onclick="closeSheet()"></div><div class="panel" id="sheetPanel"></div></div>
+  <div id="toast"></div>
+</div>
+
+<!-- Paystack inline checkout -->
+<script src="https://js.paystack.co/v1/inline.js"></script>
+<!-- Your config (edit js/config.js) -->
+<script src="js/config.js"></script>
+<!-- App logic -->
+<script src="js/app-core.js"></script>
+<script>
+// register service worker for installable PWA + offline shell
+if('serviceWorker' in navigator){
+  window.addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));
+}
+</script>
+</body>
+</html>

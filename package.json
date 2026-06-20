@@ -1,0 +1,9 @@
+{
+  "name": "sugarguard",
+  "version": "1.0.0",
+  "description": "SugarGuard — Netlify Functions for Paystack subscription verification",
+  "private": true,
+  "dependencies": {
+    "@supabase/supabase-js": "^2.45.0"
+  }
+}
